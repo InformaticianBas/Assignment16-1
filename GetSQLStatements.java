@@ -1,5 +1,4 @@
 public class GetSQLStatements {
-
     public static String[] getInitialSQL() {
         return new String[] {
             // Create Tables

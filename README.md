@@ -1,5 +1,5 @@
 # Vapor Store
-This is a simple tui demonstrating knowledge of SQL and basic programming skills with Java. Tested in Windows and on Linux (Arch Linux).
+This is a simple tui demonstrating knowledge of SQL and basic programming skills with Java. Tested in Windows and on Linux (Arch Linux as well as NixOS).
 
 ## Dependencies
 Java, SQLite, and sqlite-jdbc must be installed on system. Tested with SQLite version 3.51.3, sqlite-jdbc 3.53.1.0, and OpenJDK version 26. Should work with most versions of each program.
@@ -12,11 +12,21 @@ SQLite can be installed from their website (https://sqlite.org/download.html). A
 A jar file is already provided in repo but you are free to grab your own.
 SQLite-jdbc is available on Github (https://github.com/xerial/sqlite-jdbc/releases/tag/3.53.0.0) and on Maven (https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). 
 ## Running
+Clone the repository
+```
+git clone https://github.com/InformaticianBas/Assignment16-1.git
+```
+
 Make sure that sqlite-jdbc-*.jar is in the directory.
 Examples for compiling and running the program:
 ```
-javac -cp sqlite-jdbc-3.x.jar *.java
-java  -cp .:sqlite-jdbc-3.x.jar Main          # normal launch
-java  -cp .:sqlite-jdbc-3.x.jar Main -h        # help
-java  -cp .:sqlite-jdbc-3.x.jar Main -l TheGamer123 veryweakpassword
+javac -cp ".:sqlite-jdbc-[version].jar" *.java      # compile in POSIX/Unix-like environments (uses semicolon instead)
+javac -cp ".;sqlite-jdbc-[version].jar" *.java      # compile on Windows 
+
+java  -cp ".:sqlite-jdbc-[version].jar" Main        # normal launch in POSIX/Unix-like environments
+java  -cp ".;sqlite-jdbc-[version].jar" Main        # normal launch on Windows (uses semicolon instead)
+
+java  -cp .:sqlite-jdbc-[version].jar Main -h       # help option in POSIX/Unix-like environments
+java  -cp .:sqlite-jdbc-[version].jar Main -l       # starts with login prompt in POSIX/Unix-like environments 
 ```
+If using VSCode, you can also run it by adding the sqlite-jdbc as a referenced libraries then simply navigating to VaporStore file and pressing the play/run button on the top right.

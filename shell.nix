@@ -2,6 +2,6 @@
 pkgs.mkShell {
   buildInputs = [
     pkgs.sqlite
-    pkds.sqlite-jdbc
+    pkgs.sqlite-jdbc
   ];
 }
