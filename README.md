@@ -6,7 +6,7 @@ Java, SQLite, and sqlite-jdbc must be installed on system. Tested with SQLite ve
 
 ### Installing Dependencies
 #### SQLite
-SQLite can be installed from their website (https://sqlite.org/download.html). Also widely available on most package managers such as scoop (https://scoop.sh/#/apps?q=sqlite&p=1), winget (https://winget.run/search?query=sqlite), chocolatety (https://community.chocolatey.org/packages/SQLite), homebrew (https://formulae.brew.sh/formula/sqlite#default), and most Linux package managers (https://repology.org/project/sqlite/versions).
+SQLite can be installed from [their website](https://sqlite.org/download.html). Also widely available on most package managers such as [scoop](https://scoop.sh/#/apps?q=sqlite&p=1), [winget](https://winget.run/search?query=sqlite), [chocolatety](https://community.chocolatey.org/packages/SQLite), [homebrew](https://formulae.brew.sh/formula/sqlite#default), and [most Linux package managers](https://repology.org/project/sqlite/versions).
 
 #### sqlite-jdbc
 A jar file is already provided in repo but you are free to grab your own.

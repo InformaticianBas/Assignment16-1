@@ -27,7 +27,8 @@ public class Options {
     }
 
     public static void printHelp() {
-        System.out.println("Usuage: java VaporStore [option] [file]");
+        System.out.println("Usuage: java [java options] VaporStore [option]");
+        System.out.println("Program options: \n \t -h for help \n \t -l to begin with login prompt ");
     }
 
 }
