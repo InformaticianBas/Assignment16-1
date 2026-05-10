@@ -35,7 +35,7 @@ public class VaporStore {
                         userLogin(input);
                         break;
                     case 'd':
-                        Database.showCatalog();
+                        printCatalog();
                         break;
                     default:
                         printAppError();
@@ -49,11 +49,11 @@ public class VaporStore {
 
     public static void createUser(Scanner input){
         // Grabs email, gamertag, and password
-        System.out.print("New Email: ");
+        System.out.println("New Email: ");
         String email = input.nextLine();
-        System.out.print("Gamer Tag: ");
+        System.out.println("Gamer Tag: ");
         String gamertag = input.nextLine();
-        System.out.print("Password: ");
+        System.out.println("Password: ");
         String pass = input.nextLine();
 
         // Function passes the string variables in this function to a function that adds in entry to Accounts.
@@ -63,9 +63,9 @@ public class VaporStore {
 
        public static void userLogin(Scanner input){
         // Grabs email and password
-        System.out.print("Enter Email: ");
+        System.out.println("Enter Email: ");
         String email = input.nextLine();
-        System.out.print("Enter Password: ");
+        System.out.println("Enter Password: ");
         String password = input.nextLine();
 
         // Passes the variables to a function that validates them and returns a boolean.
@@ -77,7 +77,7 @@ public class VaporStore {
     }
 
     public static void printCatalog(){
-        System.out.println("Here is our catalog of games");
+        Database.showCatalog();
     }
 
     // For when user enters a value that isn't an option.

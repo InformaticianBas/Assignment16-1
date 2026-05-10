@@ -23,10 +23,10 @@ Examples for compiling and running the program:
 javac -cp ".:sqlite-jdbc-[version].jar" *.java      # compile in POSIX/Unix-like environments (uses semicolon instead)
 javac -cp ".;sqlite-jdbc-[version].jar" *.java      # compile on Windows 
 
-java  -cp ".:sqlite-jdbc-[version].jar" Main        # normal launch in POSIX/Unix-like environments
-java  -cp ".;sqlite-jdbc-[version].jar" Main        # normal launch on Windows (uses semicolon instead)
+java  -cp ".:sqlite-jdbc-[version].jar" VaporStore  # normal launch in POSIX/Unix-like environments
+java  -cp ".;sqlite-jdbc-[version].jar" VaporStore  # normal launch on Windows (uses semicolon instead)
 
-java  -cp .:sqlite-jdbc-[version].jar Main -h       # help option in POSIX/Unix-like environments
-java  -cp .:sqlite-jdbc-[version].jar Main -l       # starts with login prompt in POSIX/Unix-like environments 
+java  -cp .:sqlite-jdbc-[version].jar VaporStore -h # help option in POSIX/Unix-like environments
+java  -cp .:sqlite-jdbc-[version].jar VaporStore -l # starts with login prompt in POSIX/Unix-like environments 
 ```
 If using VSCode, you can also run it by adding the sqlite-jdbc as a referenced libraries then simply navigating to VaporStore file and pressing the play/run button on the top right.

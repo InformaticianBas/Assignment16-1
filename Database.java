@@ -47,8 +47,9 @@ public class Database {
     }
 
     public static boolean validateLogin(String email, String password) {
-        String sql = "SELECT Email FROM Accounts WHERE Email = ? AND UserPassword = ?";
-        try (Connection connection = connect(); PreparedStatement pstatement = connection.prepareStatement(sql)) {
+        String query = "SELECT Email FROM Accounts WHERE Email = ? AND UserPassword = ?";
+        try (Connection connection = connect(); 
+        PreparedStatement pstatement = connection.prepareStatement(query)) {
             pstatement.setString(1, email);
             pstatement.setString(2, password);
             ResultSet rset = pstatement.executeQuery();
@@ -64,7 +65,8 @@ public class Database {
 
     public static void createAccount(String email, String gamertag, String password) {
         String sql = "INSERT INTO Accounts(Email, Gamer_Tag, UserPassword) VALUES(?,?,?)";
-        try (Connection connection = connect(); PreparedStatement pstatement = connection.prepareStatement(sql)) {
+        try (Connection connection = connect(); 
+        PreparedStatement pstatement = connection.prepareStatement(sql)) {
             pstatement.setString(1, email);
             pstatement.setString(2, gamertag);
             pstatement.setString(3, password);
@@ -79,7 +81,7 @@ public class Database {
         // If logged in, show everything. If not, don't show 'M' rated.
         boolean loggedIn = (currentUserEmail != null);
         // Query that joins three tables
-        String sql = "SELECT Game_Name, Genre_Name, ESRB_Rating " +
+        String query = "SELECT Game_Name, Genre_Name, ESRB_Rating " +
                  "FROM Genre " +
                  "JOIN Games ON Genre.GenreID = Games.GenreID " +
                  "JOIN ESRB ON Games.ESRB_ID = ESRB.ESRB_ID " +
@@ -87,16 +89,16 @@ public class Database {
 
         // Appends an extra filter if not in logged in state
         if (!loggedIn) {
-            sql += " HAVING NOT ESRB_Rating = 'M'";
+            query += " HAVING NOT ESRB_Rating = 'M'";
         }
 
         try (Connection connection = connect();
             Statement statement = connection.createStatement();
-            ResultSet rset = statement.executeQuery(sql)) {
+            ResultSet rset = statement.executeQuery(query)) {
 
             System.out.println("--- Catalog View ---");
             while (rset.next()) {
-                // Simple space-separated output
+                // Simple space and pipe separated output
                 System.out.println(rset.getString("Game_Name") + " | " + 
                                    rset.getString("Genre_Name") + " | " + 
                                    rset.getString("ESRB_Rating"));
