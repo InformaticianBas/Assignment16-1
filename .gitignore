@@ -1,0 +1,9 @@
+# VSCode
+.vscode/
+# SQL file
+vaporstore.db
+VaporStore.session.sql
+# Compiled files
+*.class
+# Maven
+target/
