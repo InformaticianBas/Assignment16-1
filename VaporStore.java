@@ -16,7 +16,7 @@ public class VaporStore {
         
         boolean active = true;
         System.out.println("Welcome to the TUI for the Vaper Video Game Store! \n");
-        System.out.println("This is the main menu. \n Press 'l' to login as an existing user or 'c' to create a new user. \n Press 'd' to list the catalog of \"E for Everyone\" games. When not logged in, it will only display those that are E for Everyone. \n Press 'x' to exit the program. ");
+        System.out.println("This is the main menu. \n Press 'l' to login as an existing user or 'c' to create a new user. \n Press 'd' to list the catalog of  games. When not logged in, it will not display those that are \"M for Mature\". \n Press 'x' to exit the program. ");
 
         // Main Menu Sequence. Starts with infinite loop.
         while (active) {
